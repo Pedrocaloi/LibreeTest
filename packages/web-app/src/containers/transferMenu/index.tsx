@@ -9,9 +9,23 @@ import {useGlobalModalContext} from 'context/globalModals';
 import {useNetwork} from 'context/network';
 import {useWallet} from 'hooks/useWallet';
 import {trackEvent} from 'services/analytics';
-import {BudgetAllocation, NewCreditDelegation, NewWithDraw, ProvideLiquidity, SwapTokens} from 'utils/paths';
+import {
+  BudgetAllocation,
+  NewCreditDelegation,
+  NewWithDraw,
+  ProvideLiquidity,
+  SwapTokens,
+  TestTransfer,
+} from 'utils/paths';
 
-type Action = 'deposit_assets' | 'withdraw_assets' | 'credit_delegation' | 'swap_tokens' | 'provide_liquidity' | 'budget_allocation';
+type Action =
+  | 'deposit_assets'
+  | 'withdraw_assets'
+  | 'credit_delegation'
+  | 'swap_tokens'
+  | 'provide_liquidity'
+  | 'budget_allocation'
+  | 'test_transfer';
 
 const TransferMenu: React.FC = () => {
   const {isTransferOpen, close, open} = useGlobalModalContext();
@@ -31,6 +45,8 @@ const TransferMenu: React.FC = () => {
       open('wallet');
     } else if (action === 'deposit_assets') {
       open('deposit');
+    } else if (action === 'test_transfer') {
+      navigate(generatePath(TestTransfer, {network: network, dao: dao}));
     } else if (action === 'credit_delegation') {
       navigate(generatePath(NewCreditDelegation, {network: network, dao: dao}));
     } else if (action === 'swap_tokens') {
@@ -87,6 +103,12 @@ const TransferMenu: React.FC = () => {
           subtitle={t('TransferModal.budgetSubtitle')}
           iconRight={<IconChevronRight />}
           onClick={() => handleClick('budget_allocation')}
+        />
+        <ListItemAction
+          title={t('TransferModal.testTrasnfer')}
+          subtitle={t('TransferModal.testTransferSubtitle')}
+          iconRight={<IconChevronRight />}
+          onClick={() => handleClick('test_transfer')}
         />
       </Container>
     </ModalBottomSheetSwitcher>

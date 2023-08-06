@@ -513,7 +513,9 @@
     "provideLiquidity": "Provide liquidity",
     "provideSubtitle": "Provide liquidity to Uniswap v3",
     "budgetAllocation": "Create budget allocation plan",
-    "budgetSubtitle": "Assing fixed budgets to specific groups and protocols"
+    "budgetSubtitle": "Assing fixed budgets to specific groups and protocols",
+    "testTrasnfer": "Test transfer",
+    "testTransferSubtitle": "Just a test transfer"
   },
   "TokenModal": {
     "noTokens": "No tokens available",
@@ -802,7 +804,7 @@
       "proposalCreation": "Token holders with ≥{{token}} {{symbol}}"
     }
   },
-  "createUnityDAO" : {
+  "createUnityDAO": {
     "step1": {
       "description": "Select blockchain The chain you choose is where your tokens and assets are stored. If you already have a token, choose the chain your token is minted on. This cannot be changed later. For help selecting your chain, read our guide on choosing the best blockchain for your DAO."
     },
@@ -956,6 +958,11 @@
     "amount": "Amount",
     "amountDescription": "Amount of tokens to swap"
   },
+  "testTransfer": {
+    "title": "Test Transfer",
+    "subtitle": "Just a test transfer",
+    "description": "Just a test transfer component"
+  },
   "provideLiquidity": {
     "title": "Provide liquidity",
     "subtitle": "Provide liquidity to Uniswap v3",
@@ -979,7 +986,7 @@
     "title": "Budget Allocation",
     "subtitle": "Create a budget allocation plan",
     "description": "Assing fixed budgets to specific groups and protocols",
-    "protocolInput":"Protocol",
+    "protocolInput": "Protocol",
     "protocolDescription": "This is the destination protocol where you want to allocate this budget",
     "tokenInput": "Token",
     "tokenDescription": "Select the token to allocate",
